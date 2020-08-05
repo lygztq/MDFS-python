@@ -1,0 +1,5 @@
+{
+    "client_comm_port": 41000,
+    "prefix": "./blocks",
+    "max_client_num": 5
+}

@@ -1,0 +1,39 @@
+
+Usage:
+    python run_client.py <command> [arguments]
+
+Commands:
+    ls
+        function: list path
+        usage: ls ${remote_path}
+    
+    mkdir
+        function: make directory
+        usage: mkdir ${remote_father_path} ${dir_name}
+
+    create
+        function: create an empty file in remote
+        usage: create ${remote_father_path} ${file_name}
+    
+    upload
+        function: upload file from local to remote
+        usage: upload ${local_path} ${remote_father_path} ${optional:remote_name}
+    
+    read
+        function: read data from remote given offset and length
+        usage: read ${fileid or remote_path} ${offset} ${length} ${optional: local_output_path}
+    
+    readall
+        function: read a file from remote
+        usage: readall ${fileid or remote_path} ${optional: local_output_path}
+    
+    write
+        function: write data to remote given offset and local data
+        usage: write ${fileid or remote_path} ${offset} ${bool: from_file} ${local_path or local_data}
+        example:
+            write 123 12 true ./test/file.txt               # write to remote via id, data from local file
+            write /text/sample.txt 12 false "sample text"   # write to remote via path, data from console
+    
+    file_status
+        function: get file status from remote given file name of id
+        usage: file_status ${fileid or remote_path}
